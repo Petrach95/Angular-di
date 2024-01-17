@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './core/navbar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [
+    NavbarComponent,
+    RouterOutlet
+  ],
   template: `
-    <h1>Welcome to {{title}}!</h1>
-
-    <router-outlet></router-outlet>
+    <app-navbar />
+    
+    <div class="max-w-screen-md mx-auto">
+      <router-outlet />
+    </div>
   `,
-  styles: [],
 })
 export class AppComponent {
-  title = 'angular-di';
+
 }
